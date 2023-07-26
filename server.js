@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db"); 
+const cors = require('cors');
 const dotenv = require("dotenv").config();
 const port = 5000;
 
@@ -11,8 +12,6 @@ const app = express();
 // Middleware qui permet de traiter les données de la Request
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-var cors = require('cors');
-app.use(cors());var cors = require('cors');
 app.use(cors());
 
 //Routes
