@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/db"); 
 const cors = require('cors');
 const dotenv = require("dotenv").config();
+const multer = require("multer");
 const port = 5000;
 
 // connexion à la DB
@@ -15,6 +16,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 //Routes
+
+// Upload Image
+
+app.use('/profile', express.static('upload/images'));
+
+
+function errHandler(err, req, res, next) {
+    if (err instanceof multer.MulterError) {
+        res.json({
+            success: 0,
+            message: err.message
+        })
+    }
+}
+app.use(errHandler);
 
 //revue
 app.use('/api/revue', require("./routes/revue.routes"));

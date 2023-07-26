@@ -26,6 +26,10 @@ const revueSchema = mongoose.Schema(
                     type: String,
                     required: true,
                 },
+                picture: {
+                    type: String,
+                    default: ""
+                },
             }
         ]
     },

@@ -92,3 +92,20 @@ module.exports.updateRevuesPost = async (req, res) => {
     }
 };
 
+module.exports.uploadReviewImg = async (req, res) => {
+    try {
+        await RevueModel.updateOne(
+            {_id: req.params.id, 'reviews._id': req.params.idPost},
+            { $set: { 
+                'reviews.$.picture':req.file.filename,
+            } },
+            { new: true }
+        ).then((data) => res.status(200).send(data));
+    } catch (error) {
+        
+    }
+    res.json({
+        success: 1,
+        profile_url: `http://localhost:4000/profile/${req.file.filename}`
+    })
+}
