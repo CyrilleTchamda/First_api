@@ -104,8 +104,4 @@ module.exports.uploadReviewImg = async (req, res) => {
     } catch (error) {
         
     }
-    res.json({
-        success: 1,
-        profile_url: `http://localhost:4000/profile/${req.file.filename}`
-    })
 }

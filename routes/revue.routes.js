@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     limits: {
-        fileSize: 800000
+        fileSize: 8000000000
     }
 })
 router.post("/upload/:id/:idPost", upload.single('profile'), uploadReviewImg)

@@ -28,7 +28,7 @@ const revueSchema = mongoose.Schema(
                 },
                 picture: {
                     type: String,
-                    default: ""
+                    default: "profile_1690449104933.png"
                 },
             }
         ]
