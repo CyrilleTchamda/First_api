@@ -38,5 +38,8 @@ app.use('/api/revue', require("./routes/revue.routes"));
 //tv
 app.use('/api/tv', require("./routes/tv.routes"));
 
+//user
+app.use('/api/user', require("./routes/user.routes"));
+
 // lancer le serveur
 app.listen(port, ()=>console.log(`serveur démarré au port ${port}`))
